@@ -190,8 +190,8 @@ export default function Members({
       <TouchableWithoutFeedback onPress={Keyboard.dismiss} accessible={false}>
         <View>
           <View style={styles.header}>
-            <View>
-              <Text style={styles.titleText}>Members Directory</Text>
+            <View style={{ flex: 1, marginRight: 10 }}>
+              <Text style={styles.titleText} numberOfLines={1} adjustsFontSizeToFit>Members Directory</Text>
               <Text style={styles.subText}>{members.length} members registered</Text>
             </View>
             <TouchableOpacity style={styles.addBtn} onPress={() => setShowAddModal(true)}>
@@ -238,7 +238,7 @@ export default function Members({
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.modalOverlay}>
             <KeyboardAvoidingView 
-              behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+              behavior={Platform.OS === 'ios' ? 'padding' : undefined} 
               style={styles.keyboardView}
             >
               <TouchableWithoutFeedback onPress={() => {}}>
@@ -301,27 +301,27 @@ export default function Members({
                         ))}
                       </View>
                     </View>
-                  </ScrollView>
 
-                  <View style={styles.modalActions}>
-                    <TouchableOpacity 
-                      style={[styles.modalBtn, styles.cancelBtn]} 
-                      onPress={() => setShowAddModal(false)}
-                    >
-                      <Text style={styles.cancelBtnText}>Cancel</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity 
-                      style={[styles.modalBtn, styles.saveBtn]} 
-                      onPress={handleAddMember}
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <ActivityIndicator size="small" color="#ede8de" />
-                      ) : (
-                        <Text style={styles.saveBtnText}>Save</Text>
-                      )}
-                    </TouchableOpacity>
-                  </View>
+                    <View style={[styles.modalActions, { paddingBottom: 10 }]}>
+                      <TouchableOpacity 
+                        style={[styles.modalBtn, styles.cancelBtn]} 
+                        onPress={() => setShowAddModal(false)}
+                      >
+                        <Text style={styles.cancelBtnText}>Cancel</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity 
+                        style={[styles.modalBtn, styles.saveBtn]} 
+                        onPress={handleAddMember}
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? (
+                          <ActivityIndicator size="small" color="#ede8de" />
+                        ) : (
+                          <Text style={styles.saveBtnText}>Save</Text>
+                        )}
+                      </TouchableOpacity>
+                    </View>
+                  </ScrollView>
                 </View>
               </TouchableWithoutFeedback>
             </KeyboardAvoidingView>
@@ -339,7 +339,7 @@ export default function Members({
         <TouchableWithoutFeedback onPress={Keyboard.dismiss}>
           <View style={styles.modalOverlay}>
             <KeyboardAvoidingView 
-              behavior={Platform.OS === 'ios' ? 'padding' : 'height'} 
+              behavior={Platform.OS === 'ios' ? 'padding' : undefined} 
               style={styles.keyboardView}
             >
               <TouchableWithoutFeedback onPress={() => {}}>
@@ -399,27 +399,27 @@ export default function Members({
                         ))}
                       </View>
                     </View>
-                  </ScrollView>
 
-                  <View style={styles.modalActions}>
-                    <TouchableOpacity 
-                      style={[styles.modalBtn, styles.cancelBtn]} 
-                      onPress={() => setShowEditModal(false)}
-                    >
-                      <Text style={styles.cancelBtnText}>Cancel</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity 
-                      style={[styles.modalBtn, styles.saveBtn]} 
-                      onPress={handleEditMemberSubmit}
-                      disabled={isSubmitting}
-                    >
-                      {isSubmitting ? (
-                        <ActivityIndicator size="small" color="#ede8de" />
-                      ) : (
-                        <Text style={styles.saveBtnText}>Update</Text>
-                      )}
-                    </TouchableOpacity>
-                  </View>
+                    <View style={[styles.modalActions, { paddingBottom: 10 }]}>
+                      <TouchableOpacity 
+                        style={[styles.modalBtn, styles.cancelBtn]} 
+                        onPress={() => setShowEditModal(false)}
+                      >
+                        <Text style={styles.cancelBtnText}>Cancel</Text>
+                      </TouchableOpacity>
+                      <TouchableOpacity 
+                        style={[styles.modalBtn, styles.saveBtn]} 
+                        onPress={handleEditMemberSubmit}
+                        disabled={isSubmitting}
+                      >
+                        {isSubmitting ? (
+                          <ActivityIndicator size="small" color="#ede8de" />
+                        ) : (
+                          <Text style={styles.saveBtnText}>Update</Text>
+                        )}
+                      </TouchableOpacity>
+                    </View>
+                  </ScrollView>
                 </View>
               </TouchableWithoutFeedback>
             </KeyboardAvoidingView>
