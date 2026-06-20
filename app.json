@@ -1,0 +1,36 @@
+{
+  "expo": {
+    "name": "Crafted Fitness Hub",
+    "slug": "crafted-portfolio-app",
+    "version": "1.0.0",
+    "sdkVersion": "54.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0b0b0c"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.craftedhub.partnerledger"
+    },
+    "android": {
+      "package": "com.craftedhub.partnerledger",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/android-icon-foreground.png",
+        "backgroundImage": "./assets/android-icon-background.png",
+        "backgroundColor": "#0b0b0c"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "51df6ec2-66d0-40b3-b8be-ae21bf064225"
+      }
+    }
+  }
+}
